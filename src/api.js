@@ -1,7 +1,7 @@
 import axios from 'axios';
-
-const BASE_URL = "https://www.themealdb.com/api/json/v1/1/";
-
+ 
+const BASE_URL = process.env.REACT_APP_BASE_URL ||  "https://www.themealdb.com/api/json/v1/1/";
+ 
 class Api {
     
     static async getByMainIngrediant(data){
@@ -9,5 +9,5 @@ class Api {
         return res
     }
 }
-
+ 
 export default Api;
