@@ -4,6 +4,6 @@ import recepieSlice from './slices/recepieSlice'
 
 export default configureStore({
     reducer: {
-        recepie: recepieSlice
+        recepies: recepieSlice
     }
 })

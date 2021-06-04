@@ -5,7 +5,7 @@ export const getByIngredient = createAsyncThunk(
     `recepies/getByIngredient`,
     async (data, thunkAPI) => {
         const res = await Api.getByMainIngrediant(data)
-       console.log(res)
+       return res
     }
 )
 
@@ -22,7 +22,7 @@ const recepieSlice = createSlice({
 
     },
     extraReducers: {
-
+        
     }
 })
 
