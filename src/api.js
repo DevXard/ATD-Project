@@ -8,6 +8,11 @@ class Api {
         const res = await axios.get(`${BASE_URL}filter.php?i=${data.ingreadient}`)
         return res
     }
+ 
+    static async getById(id){
+        const res = await axios.get(`${BASE_URL}lookup.php?i=${id}`)
+        return res
+    }
 }
  
 export default Api;

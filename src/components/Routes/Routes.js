@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import SearchPage from '../SearchPage/SearhPage';
+import SearchPage from '../SearchPage/SearchPage';
+import DetailsPage from '../DetailsPage/DetailsPage';
 
 const Routes = () => {
 
@@ -10,9 +11,11 @@ const Routes = () => {
                 <Route exact path="/" >
                     <SearchPage />
                 </Route>
-            </Switch>
-
-            <Redirect to="/" />
+                <Route exact path="/details/:id">
+                    <DetailsPage />
+                </Route>
+                <Redirect to="/" />
+            </Switch> 
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import {BrowserRouter} from 'react-router-dom';
 
-import Routes from './components/SearchPage/SearchPage';
+import Routes from './components/Routes/Routes';
 
 function App() {
   return (
