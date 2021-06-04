@@ -6,11 +6,11 @@ import ListingCard from './ListingCard';
  
 const ListingPage = () => {
  
-    const {recepies, notFount} = useSelector(recepieSelector)
+    const {recepies, notFound} = useSelector(recepieSelector)
 
-    if(notFount){
+    if(notFound){
         return (
-            <div>No recepies Found</div>
+            <div className="flex justify-center">Sorry recepie not Found</div>
         )
     }
  

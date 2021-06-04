@@ -21,7 +21,8 @@ export const getById = createAsyncThunk(
 const initialState = {
     isLoading: false,
     recepies: [],
-    recepie: {}
+    recepie: {},
+    notFound: false
 }
  
 const recepieSlice = createSlice({
@@ -32,8 +33,14 @@ const recepieSlice = createSlice({
     },
     extraReducers: {
         [getByIngredient.fulfilled]: (state, action) =>{
-            state.isLoading = false;
-            state.recepies = [...action.payload]
+            if(action.payload === null){
+                state.notFound = true;
+            }else{
+                state.isLoading = false;
+                state.recepies = [...action.payload];
+                state.notFound = false;
+            }
+            
         },
         [getById.fulfilled]: (state, action) => {
             state.isLoading = false;
