@@ -1,9 +1,18 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import Api from '../../api';
+
+export const getByIngredient = createAsyncThunk(
+    `recepies/getByIngredient`,
+    async (data, thunkAPI) => {
+        const res = await Api.getByMainIngrediant(data)
+       console.log(res)
+    }
+)
 
 const initialState = {
-    isLoading = false,
-    recepies = [],
-    recepie = {}
+    isLoading: false,
+    recepies: [],
+    recepie: {}
 }
 
 const recepieSlice = createSlice({
