@@ -1,7 +1,13 @@
+import SearchBar from './SearchBar';
+import ListingPage from '../ListingPage/ListingPage';
+
 const SearchPage = () => {
 
     return(
-        <div>Search page</div>
+        <div>
+            <SearchBar />
+            <ListingPage />
+        </div>
     )
 }
 
