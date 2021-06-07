@@ -32,10 +32,10 @@ const SearchBar = () => {
                 value={formData.ingreadient}
                 onChange={handleChange}
                 type="text"
-                placeholder="Search by ingreadient"
+                placeholder="Search by Ingredient"
                  />
                  <div className="p-4">
-                    <button className="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center text-sm" >Search</button>
+                    <button className="bg-blue-500 text-white rounded-full p-4 hover:bg-blue-400 focus:outline-none w-14 h-14 flex items-center justify-center text-sm" >Search</button>
                  </div>
             </form>
         </div>

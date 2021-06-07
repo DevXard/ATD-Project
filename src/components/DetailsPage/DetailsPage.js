@@ -29,7 +29,7 @@ const DetailsPage = () => {
         <form  className="flex-auto p-6">
           <div className="flex flex-wrap">
             <h1 className="flex-auto text-base font-medium text-gray-500">
-              Recepie Area:  
+              Recipe Area:  
               <span className="font-semibold ml-1 text-gray-700">
                {recepie.strArea}
               </span>
@@ -48,7 +48,7 @@ const DetailsPage = () => {
           </div>
           <div className="grid grid-cols-3 gap-4 ">
            <div className="text-xl font-bold">
-            Ingrediants:
+            Ingredients:
             <div className="text-base font-semibold">
             {ing.map( (data, idx) => <p key={idx}>{data}</p>)}
             </div>
