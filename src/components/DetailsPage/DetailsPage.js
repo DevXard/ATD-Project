@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
+import ReactPlayer from 'react-player';
  
 import {recepieSelector, getById} from '../../store/slices/recepieSlice';
 import IngreadientAndMeasure from '../../helpers/helpers';
@@ -9,14 +10,16 @@ const DetailsPage = () => {
  
     const { id } = useParams();
     const dispatch = useDispatch();
-    const {recepie} = useSelector(recepieSelector)
+    const {recepie, isLoading} = useSelector(recepieSelector)
  
     useEffect(() => {
         dispatch(getById(id))
     },[dispatch, id])
  
     
- 
+    if( isLoading){
+      return <div className="flex items-center justify-center h-screen text-7xl">Loading...</div>
+    }
     const ing = IngreadientAndMeasure(recepie)
     
     
@@ -29,7 +32,7 @@ const DetailsPage = () => {
         <form  className="flex-auto p-6">
           <div className="flex flex-wrap">
             <h1 className="flex-auto text-base font-medium text-gray-500">
-              Recipe Area:  
+              Recepie Area:  
               <span className="font-semibold ml-1 text-gray-700">
                {recepie.strArea}
               </span>
@@ -37,9 +40,7 @@ const DetailsPage = () => {
             <h1 className="flex-auto text-2xl font-semibold">
               {recepie.strMeal}
             </h1>
-            <div className="text-xl font-semibold text-gray-500">
-              <a href={recepie.strYoutube}>YouTube</a>
-            </div>
+            
             <div className="w-full flex-none text-sm font-medium text-gray-500 mt-2">
               Categry: {recepie.strCategory}
               
@@ -48,7 +49,7 @@ const DetailsPage = () => {
           </div>
           <div className="grid grid-cols-3 gap-4 ">
            <div className="text-xl font-bold">
-            Ingredients:
+            Ingrediants:
             <div className="text-base font-semibold">
             {ing.map( (data, idx) => <p key={idx}>{data}</p>)}
             </div>
@@ -59,15 +60,22 @@ const DetailsPage = () => {
                 <p>{recepie.strInstructions}</p>
             </div>
           </div>
+            <div className="flex justify-center">
+              <div>
+                <h2 className="flex-auto text-lg font-medium text-gray-500"> Recepie Video</h2>
+                <ReactPlayer url={recepie.strYoutube}  />
+              </div>
             
+          </div>
+          
         </form>
+        
       </div>
+      
       <div >
       
       </div>
- 
-      
-        </div>
+      </div>
     )
 }
  

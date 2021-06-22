@@ -45,6 +45,9 @@ const recepieSlice = createSlice({
         [getById.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.recepie = action.payload
+        },
+        [getById.pending]: (state) => {
+            state.isLoading = true;
         }
     }
 })

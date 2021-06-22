@@ -7,10 +7,20 @@ import ListingCard from './ListingCard';
 const ListingPage = () => {
  
     const {recepies, notFound} = useSelector(recepieSelector)
-
+ 
+    
     if(notFound){
         return (
-            <div className="flex justify-center">Sorry recepie not Found</div>
+            <div className="flex justify-center">Sorry! recepie not Found</div>
+        )
+    }
+ 
+    if(recepies.length < 1){
+        return (
+            <div className="flex justify-center ">
+                <h1 className="text-2xl font-medium text center text-gray-600">
+                Search for meals by your favorite Ingredients <br /> </h1>
+            </div>
         )
     }
  
