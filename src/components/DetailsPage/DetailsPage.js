@@ -18,7 +18,7 @@ const DetailsPage = () => {
  
     
     if( isLoading){
-      return <div className="flex items-center justify-center h-screen text-7xl">Loading...</div>
+      return <div className="flex items-center justify-center h-screen text-7xl">Loading....</div>
     }
     const ing = IngreadientAndMeasure(recepie)
     
